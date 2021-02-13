@@ -8,6 +8,7 @@
 SRC =	sources/window.c	\
 		sources/init.c	\
 		sources/event.c	\
+		sources/draw_sprite.c	\
 		sources/free_all.c
 
 OBJ = $(SRC:.c=.o)

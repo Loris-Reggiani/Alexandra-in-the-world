@@ -48,13 +48,13 @@ int alex_sprite(global_t *g)
 
 int continent_sprite(global_t *g)
 {
-    for (int i = AMER_ND; i <= OCEANIE; i += 1) {
+    for (int i = AMER_ND; i <= OCEA; i += 1) {
         g->bloc[i].texture = sfTexture_createFromFile("image/babouche.png", NULL);
         g->bloc[i].sprite = sfSprite_create();
         g->bloc[i].scale.x = 0.25;
         g->bloc[i].scale.y = 0.25;
-        g->bloc[i].pos.x = -400;
-        g->bloc[i].pos.y = -400;
+        g->bloc[i].pos.x = -1000;
+        g->bloc[i].pos.y = -1000;
         sfSprite_setTexture(g->bloc[i].sprite, g->bloc[i].texture, TRUE);
         sfSprite_setScale(g->bloc[i].sprite, g->bloc[i].scale);
         sfSprite_setPosition(g->bloc[i].sprite, g->bloc[i].pos);

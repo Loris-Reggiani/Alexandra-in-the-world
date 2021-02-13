@@ -36,7 +36,7 @@
 
 typedef enum 
 {
-    AMER_ND, AMER_SD, EUROPE, AFR, ASIE, OCEANIE
+    AMER_ND, AMER_SD, EURO, AFR, ASIE, OCEA
 }continents;
 
 typedef struct
@@ -82,7 +82,8 @@ typedef struct
 int init(global_t *map);
 
 int check_event(global_t *g);
-int check_event_mouse(global_t *g);
+
+int draw_sprite(global_t *g);
 
 int free_all(global_t *g);
 
