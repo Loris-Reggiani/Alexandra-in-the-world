@@ -12,8 +12,8 @@ sfRenderWindow *create_Window(void)
     sfRenderWindow *window;
     sfVideoMode video_mode = {1920, 1080, 32};
 
-    window = sfRenderWindow_create(video_mode,  \
-    "Tower_defender", sfDefaultStyle, NULL);
+    window = sfRenderWindow_create(video_mode,
+    "Alexandra_in_the_world", sfDefaultStyle, NULL);
     return window;
 }
 
