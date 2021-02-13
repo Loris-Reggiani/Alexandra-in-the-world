@@ -36,7 +36,7 @@
 
 typedef enum 
 {
-    AMER_ND, AMER_SD, EUROPE, AFR, ANTARCT, ASIE, OCEANIE
+    AMER_ND, AMER_SD, EUROPE, AFR, ASIE, OCEANIE
 }continents;
 
 typedef struct
@@ -57,6 +57,7 @@ typedef struct
 typedef struct
 {
     sfSprite *sprite;
+    sfTexture *texture;
     sfVector2f pos;
     sfVector2f scale;
     my_rect rect;
@@ -72,6 +73,8 @@ typedef struct
     objet_t map;
     objet_t alex;
     objet_t *bloc;
+
+    sfVector2i clic_pos;
 }global_t;
 
 // fonction
@@ -79,7 +82,7 @@ typedef struct
 int init(global_t *map);
 
 int check_event(global_t *g);
-
+int check_event_mouse(global_t *g);
 
 int free_all(global_t *g);
 

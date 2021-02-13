@@ -14,22 +14,18 @@ int check_event_close(global_t *g)
     return 0;
 }
 
-int check_event_volume(global_t *g)
+int check_event_mouse(global_t *g)
 {
-    if (sfKeyboard_isKeyPressed(sfKeyAdd))
-        if (g->music->volume < 100){
-            g->music->volume += 2;
-        }
-    if (sfKeyboard_isKeyPressed(sfKeySubtract))
-        if (g->music->volume > 0) {
-            g->music->volume -= 2;
-        }
+    if (g->event.type == sfEvtMouseButtonPressed) {
+        g->clic_pos = sfMouse_getPositionRenderWindow(g->window);
+        printf("%i, %i\n", g->clic_pos.x, g->clic_pos.y);
+    }
     return 0;
 }
 
 int check_event(global_t *g)
 {
     check_event_close(g);
-    //check_event_volume(g);
+    check_event_mouse(g);
     return 0;
 }

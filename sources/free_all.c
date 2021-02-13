@@ -10,6 +10,8 @@
 int free_all(global_t *g)
 {
     sfRenderWindow_destroy(g->window);
+    free(g->bloc);
+    free(g->music);
     free(g);
     return 0;
 }
