@@ -18,6 +18,7 @@ int main(void)
         //changes(g);
         //draw_image(g, g->window);
         sfRenderWindow_drawSprite(g->window, g->map.sprite, NULL);
+        sfRenderWindow_drawSprite(g->window, g->alex.sprite, NULL);
         sfRenderWindow_display(g->window);
         sfRenderWindow_clear(g->window, sfWhite);
     }

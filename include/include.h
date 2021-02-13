@@ -34,6 +34,11 @@
 
 // structure
 
+typedef enum 
+{
+    AMER_ND, AMER_SD, EUROPE, AFR, ANTARCT, ASIE, OCEANIE
+}continents;
+
 typedef struct
 {
     sfMusic *music;
@@ -65,7 +70,7 @@ typedef struct
 
     music_t *music;
     objet_t map;
-    objet_t you;
+    objet_t alex;
     objet_t *bloc;
 }global_t;
 

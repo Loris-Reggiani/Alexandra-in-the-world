@@ -30,11 +30,27 @@ int map_sprite(global_t *g)
     return 0;
 }
 
+int alex_sprite(global_t *g)
+{
+    sfTexture *texture;
+
+    texture = sfTexture_createFromFile("image/Alexandra.png", NULL);
+    g->alex.sprite = sfSprite_create();
+    sfSprite_setTexture(g->alex.sprite, texture, TRUE);
+    g->alex.scale.x = 1;
+    g->alex.scale.y = 1;
+    g->alex.pos.x = 1;
+    g->alex.pos.y = 1;
+    sfSprite_setScale(g->alex.sprite, g->map.scale);
+    return 0;
+}
+
 int init(global_t *g)
 {
     g->window = create_Window();
     sfRenderWindow_setFramerateLimit(g->window, 144);
     map_sprite(g);
-    g->bloc = malloc(sizeof(objet_t) * 6);
+    g->bloc = malloc(sizeof(objet_t) * 7);
+    alex_sprite(g);
     return 0;
 }
