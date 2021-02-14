@@ -38,8 +38,8 @@ int alex_sprite(global_t *g)
     sfSprite_setTexture(g->alex.sprite, g->alex.texture, TRUE);
     g->alex.scale.x = 0.20;
     g->alex.scale.y = 0.20;
-    g->alex.pos.x = 950;
-    g->alex.pos.y = 200;
+    g->alex.pos.x = 900;
+    g->alex.pos.y = 950;
     sfSprite_setScale(g->alex.sprite, g->alex.scale);
     sfSprite_setPosition(g->alex.sprite, g->alex.pos);
     sfSprite_setOrigin(g->alex.sprite, origin);
@@ -94,8 +94,8 @@ int continent_music(global_t *g)
 
 int init(global_t *g)
 {
-    g->clic_pos.x = 950;
-    g->clic_pos.y = 200;
+    g->clic_pos.x = 900;
+    g->clic_pos.y = 950;
     g->window = create_Window();
     sfRenderWindow_setFramerateLimit(g->window, 60);
     g->bloc = malloc(sizeof(objet_t) * 6);

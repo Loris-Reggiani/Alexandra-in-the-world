@@ -78,7 +78,12 @@ int contibox(global_t *g)
 
 int changes(global_t *g)
 {
-    alex_move(g);
+    for (int i = AMER_ND; i <= OCEA; i += 1) {
+        if (i < OCEA && g->music[i].m == 1)
+            break;
+        if (i == OCEA && g->music[i].m == 0)
+            alex_move(g);
+    }
     contibox(g);
     return 0;
 }

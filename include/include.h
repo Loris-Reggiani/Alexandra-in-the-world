@@ -78,6 +78,7 @@ typedef struct
 
     sfVector2i clic_pos;
     int exit;
+    int quest;
 }global_t;
 
 // fonction

@@ -16,10 +16,8 @@ int check_event_close(global_t *g)
 
 int check_event_mouse(global_t *g)
 {
-    if (g->event.type == sfEvtMouseButtonPressed) {
+    if (g->event.type == sfEvtMouseButtonPressed)
         g->clic_pos = sfMouse_getPositionRenderWindow(g->window);
-        printf("%i, %i\n", g->clic_pos.x, g->clic_pos.y);
-    }
     return 0;
 }
 
