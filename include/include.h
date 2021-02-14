@@ -77,6 +77,7 @@ typedef struct
     objet_t *bloc;
 
     sfVector2i clic_pos;
+    int exit;
 }global_t;
 
 // fonction

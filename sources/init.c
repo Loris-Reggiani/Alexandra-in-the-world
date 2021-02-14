@@ -48,11 +48,16 @@ int alex_sprite(global_t *g)
 
 int continent_sprite(global_t *g)
 {
+    g->bloc[AMER_ND].texture = sfTexture_createFromFile("image/amerique_du_nord.png", NULL);
+    g->bloc[AMER_SD].texture = sfTexture_createFromFile("image/amerique_du_sud.png", NULL);
+    g->bloc[EURO].texture = sfTexture_createFromFile("image/europe.png", NULL);
+    g->bloc[AFR].texture = sfTexture_createFromFile("image/afrique.png", NULL);
+    g->bloc[ASIE].texture = sfTexture_createFromFile("image/asie.png", NULL);
+    g->bloc[OCEA].texture = sfTexture_createFromFile("image/oceanie.png", NULL);
     for (int i = AMER_ND; i <= OCEA; i += 1) {
-        g->bloc[i].texture = sfTexture_createFromFile("image/babouche.png", NULL);
         g->bloc[i].sprite = sfSprite_create();
-        g->bloc[i].scale.x = 0.25;
-        g->bloc[i].scale.y = 0.25;
+        g->bloc[i].scale.x = 1;
+        g->bloc[i].scale.y = 1;
         g->bloc[i].pos.x = -1000;
         g->bloc[i].pos.y = -1000;
         sfSprite_setTexture(g->bloc[i].sprite, g->bloc[i].texture, TRUE);
