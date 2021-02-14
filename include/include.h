@@ -43,6 +43,7 @@ typedef struct
 {
     sfMusic *music;
     float volume;
+    int m;
 }music_t;
 
 typedef struct

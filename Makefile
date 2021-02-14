@@ -23,7 +23,7 @@ DEMONFLAGS = -Werror
 VALGRINDFLAGS = -g3
 
 all:	$(OBJ)
-	gcc -o $(NAME) $(OBJ) $(CSFMLFLAGS) $(CFLAGS) $(VALGRINDFLAGS)
+	gcc -o $(NAME) $(OBJ) $(CSFMLFLAGS) $(CFLAGS)
 
 clean:
 	rm -rf $(SVFL)

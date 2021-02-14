@@ -63,16 +63,41 @@ int continent_sprite(global_t *g)
     return 0;
 }
 
+int continent_music(global_t *g)
+{
+    g->music[AMER_ND].music = sfMusic_createFromFile("music/NA.OGG");
+    g->music[AMER_SD].music = sfMusic_createFromFile("music/NS.OGG");
+    g->music[EURO].music = sfMusic_createFromFile("music/EU.OGG");
+    g->music[AFR].music = sfMusic_createFromFile("music/AFR.OGG");
+    g->music[ASIE].music = sfMusic_createFromFile("music/AS.OGG");
+    g->music[OCEA].music = sfMusic_createFromFile("music/OC.OGG");
+    
+
+    sfMusic_setPlayingOffset(g->music[AMER_ND].music, sfSeconds(3.5));
+    sfMusic_setPlayingOffset(g->music[AMER_SD].music, sfSeconds(3.5));
+    sfMusic_setPlayingOffset(g->music[EURO].music, sfSeconds(7));
+    sfMusic_setPlayingOffset(g->music[AFR].music, sfSeconds(23));
+    sfMusic_setPlayingOffset(g->music[ASIE].music, sfSeconds(17));
+
+    for (int i = AMER_ND; i <= OCEA; i += 1) {
+        sfMusic_setLoop(g->music[i].music, TRUE);
+        g->music[i].volume = 50;
+        sfMusic_setVolume(g->music[i].music, g->music[i].volume);
+    }
+    return 0;
+}
+
 int init(global_t *g)
 {
     g->clic_pos.x = 950;
     g->clic_pos.y = 200;
     g->window = create_Window();
     sfRenderWindow_setFramerateLimit(g->window, 60);
-    g->bloc = malloc(sizeof(objet_t) * 7);
-    g->bloc = malloc(sizeof(objet_t) * 7);
+    g->bloc = malloc(sizeof(objet_t) * 6);
+    g->music = malloc(sizeof(objet_t) * 6);
     map_sprite(g);
     alex_sprite(g);
     continent_sprite(g);
+    continent_music(g);
     return 0;
 }

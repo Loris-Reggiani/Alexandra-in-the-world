@@ -61,8 +61,18 @@ int contibox(global_t *g)
         g->bloc[OCEA].pos.x = -1000;
         g->bloc[OCEA].pos.y = -1000;
     }
-    for (int i = AMER_ND; i <= OCEA; i += 1)
+    for (int i = AMER_ND; i <= OCEA; i += 1) {
         sfSprite_setPosition(g->bloc[i].sprite, g->bloc[i].pos);
+        if (g->bloc[i].pos.x != -1000 && g->bloc[i].pos.y != -1000) {
+            if (g->music[i].m == 0) {
+                g->music[i].m = 1;
+                sfMusic_play(g->music[i].music);
+            }
+        } else {
+            g->music[i].m = 0;
+            sfMusic_pause(g->music[i].music);
+        }
+    }
     return 0;
 }
 
