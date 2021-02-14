@@ -61,6 +61,7 @@ typedef struct
     sfVector2f pos;
     sfVector2f scale;
     my_rect rect;
+    int quiz;
 }objet_t;
 
 typedef struct

@@ -58,6 +58,7 @@ int continent_sprite(global_t *g)
         sfSprite_setTexture(g->bloc[i].sprite, g->bloc[i].texture, TRUE);
         sfSprite_setScale(g->bloc[i].sprite, g->bloc[i].scale);
         sfSprite_setPosition(g->bloc[i].sprite, g->bloc[i].pos);
+        g->bloc[i].quiz = 0;
     }
     return 0;
 }
